@@ -2,7 +2,7 @@ import React from 'react';
 import { Download, MapPin, Mail, Phone, Award, Target, Users } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { portfolioData } from '../data/portfolioData';
-import profileImg from "/Users/manidatta/Documents/project/dist/assets/profile.jpeg";
+import profileImg from "/Users/manidatta/Documents/project/dist/assets/profile-DGPliRbd.jpeg";
 
 const About: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();
