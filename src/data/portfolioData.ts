@@ -271,7 +271,7 @@ export const portfolioData = {
       ],
       technologies: ["Python", "PyTorch", "Image Processing", "Transformers", "Hyperparameter Tuning", "Text Embeddings"],
       github: "https://github.com/Manidatta1/Visual-Question-Answering",
-      image: "https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=600"
+      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ]
 };
