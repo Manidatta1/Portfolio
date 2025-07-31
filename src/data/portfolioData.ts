@@ -143,24 +143,12 @@ export const portfolioData = {
       company: "NCR Voyix",
       period: "Feb 2023 - Aug 2024",
       location: "Hyderabad, India",
-      achievements: [
-        "Designed and maintained the large scale data pipelines for automated transactions and backend APIs for self-checkout systems.",
-        "Developed module for storing the transaction data in databases, supports real-time Online Transaction Processing for self-checkout systems.",
-        "Integrated self-checkout applications with hardware interfaces using Versioned and RESTful APIs for reliable data exchange.",
-        "Improved the deployment efficiency by 30% using the Docker-based micro services architecture with publish-subscribe mechanism using MQTT broker in python for inter-service data transfer.",
-        "Utilized the SQL and MongoDB for the real time analytics and the data storage."
-      ]
     },
     {
       title: "Data Science Intern",
       company: "Verzeo",
       period: "Sep 2021 - Nov 2021",
       location: "Remote",
-      achievements: [
-        "Built Machine Learning models to predict the vehicle sales forecasting using historical data.",
-        "Achieved accuracy of 94% using Support Vector Machines with optimized hyperparameters using Grid-SearchCV.",
-        "Designed the interactive Tableau dashboards to visualize the monthly sales patterns and identify the peak-selling period for stakeholders.",
-      ]
     }
   ],
 
@@ -256,7 +244,7 @@ export const portfolioData = {
         "Visualized method-wise performance using bar charts and test metrics."
       ],
       technologies: ["Python", "PyTorch", "Hyperparameter Tuning", "Image Processing"],
-      github: "https://github.com/Manidatta1/Regularization-Strategies-on-KMNIST-Datasetm",
+      github: "https://github.com/Manidatta1/Regularization-Strategies-on-KMNIST-Dataset",
       image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
