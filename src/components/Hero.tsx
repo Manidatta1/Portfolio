@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronDown, Github, Linkedin, Sparkles, Code, Database } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
-import profileImg from "/Users/manidatta/Documents/project/dist/assets/profile-DGPliRbd.jpeg";
+import profileImg from '../assets/profile.jpeg';
 
 const Hero: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
