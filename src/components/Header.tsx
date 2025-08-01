@@ -7,7 +7,7 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Replace this URL with your actual Google Drive resume link
-  const RESUME_URL = "https://drive.google.com/file/d/1YtuW1v9uawMPRuTJGUyNMdUZJyu4fKwS/view?usp=sharing";
+  const RESUME_URL = "https://drive.google.com/file/d/1l1VthELFbN0Zthrn-cUH2j-Z-tusi0R5/view?usp=sharing";
 
   const navItems = [
     { name: 'About', href: '#about' },
