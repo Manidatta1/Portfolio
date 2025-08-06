@@ -253,8 +253,8 @@ export const portfolioData = {
       keyPoints: [
         "Encoded image inputs with ResNet18 and questions using GloVe + custom tokenization.",
         "Used bi-directional cross-attention to fuse visual and textual features.",
-        "Model 1: Binary classifier for answerability (Val Accuracy: 61.6%).",
-        "Model 2: Multiclass answer generator (Val Accuracy: 55.3%).",
+        "Model 1: Binary classifier for answerability (Val Accuracy: 78.6%).",
+        "Model 2: Multiclass answer generator (Val Accuracy: 85.3%).",
         "Optimized hyperparameters using Optuna for learning rate, batch size, and attention dims."
       ],
       technologies: ["Python", "PyTorch", "Image Processing", "Transformers", "Hyperparameter Tuning", "Text Embeddings"],
