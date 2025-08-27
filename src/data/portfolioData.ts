@@ -21,6 +21,7 @@ export const portfolioData = {
         "Deep Learning & Neural Networks",
         "Statistical Methods and Applications",
         "Data Mining",
+        "Data Center Scale Computing"
       ]
     },
     {
@@ -138,6 +139,12 @@ export const portfolioData = {
   },
 
   experience: [
+    {
+      title: "Data Engineer Intern",
+      company: "Truve",
+      period: "May 2025 - Aug 2025",
+      location: "Colorado, United States",
+    },
     {
       title: "Data and API Engineer",
       company: "NCR Voyix",
@@ -260,6 +267,20 @@ export const portfolioData = {
       technologies: ["Python", "PyTorch", "Image Processing", "Transformers", "Hyperparameter Tuning", "Text Embeddings"],
       github: "https://github.com/Manidatta1/Visual-Question-Answering",
       image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      title: "Parking Slot Detection",
+      description: "Developed an automated parking slot monitoring system using color-based segmentation and a ResNet18 model to classify slots as occupied or available. Integrated OpenCV and PyTorch for real-time inference and Excel report generation.",
+      keyPoints: [
+        "Built a CV pipeline using color segmentation and bounding box annotation for parking slot extraction.",
+        "Trained a ResNet18 classifier on cropped slot images (94% accuracy) using PyTorch.",
+        "Enabled real-time prediction with slot overlay visualization (blue: available, orange: occupied).",
+        "Exported usage stats to Excel with timestamps for occupancy tracking.",
+        "Supports easy annotation via drag-and-drop UI and slot coordinate saving."
+      ],
+      technologies: ["Python", "Computer Vision", "Deep Learning", "Image Processing"],
+      github: "https://github.com/Manidatta1/Parking-Slot-Detection",
+      image: "https://images.pexels.com/photos/28948284/pexels-photo-28948284.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
   ]
 };
