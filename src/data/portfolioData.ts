@@ -15,7 +15,7 @@ export const portfolioData = {
       degree: "Master of Science in Data Science",
       school: "University of Colorado Boulder",
       year: "Aug 2024- May 2026",
-      gpa: "3.983/4.0",
+      gpa: "3.943/4.0",
       coursework: [
         "Machine Learning",
         "Deep Learning & Neural Networks",
@@ -36,7 +36,11 @@ export const portfolioData = {
         "Image and Video Processing Using Machine Learning",
         "Probability Theory and Stochastic Process",
         "Computer Networks",
-        "Verilog Design"
+        "Verilog",
+        "Digital System Design",
+        "Integrated Circuits",
+        "VLSI",
+        "Signal Processing"
       ]
     }
   ],
@@ -49,7 +53,7 @@ export const portfolioData = {
     ],
     tools: [
       "Git", "Dagshub", "Docker", "MLflow",
-      "Airflow", "AWS", "Tableau", "Linux"
+      "Airflow", "AWS", "Tableau", "Linux", "GCP"
     ],
     concepts: {
       "🧹 Data Preprocessing": [
@@ -106,7 +110,8 @@ export const portfolioData = {
       "🧠 Artificial Intelligence": [
         "Markov Decision Models",
         "Deep Q-Networks",
-        "Actor-Critic Models"
+        "Actor-Critic Models",
+        "AI Agents (AutoGen,  CrewAI, LangGraph)"
       ],
       "📈 Statistical Modeling": [
         "T-tests",

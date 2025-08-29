@@ -7,7 +7,7 @@ import profileImg from '../assets/profile.jpeg';
 const About: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();
 
-  const RESUME_URL = "https://drive.google.com/file/d/1Rywba07VcFLcgB5SbYsAQ7QpuMFpXOik/view?usp=sharing";
+  const RESUME_URL = "https://drive.google.com/file/d/1pclD4FkosrfA8xdmAqrqatk7azS6MomB/view?usp=sharing";
 
 
   return (
@@ -50,15 +50,15 @@ const About: React.FC = () => {
               {/* Stats Cards */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-6 rounded-2xl border border-blue-200 dark:border-blue-700/30">
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">1.5+</div>
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">2+</div>
                   <div className="text-sm text-blue-700 dark:text-blue-300 font-medium">Years Experience</div>
                 </div>
                 <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-6 rounded-2xl border border-purple-200 dark:border-purple-700/30">
-                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">7+</div>
+                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">8+</div>
                   <div className="text-sm text-purple-700 dark:text-purple-300 font-medium">Projects Completed</div>
                 </div>
                 <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-6 rounded-2xl border border-green-200 dark:border-green-700/30">
-                  <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">3.983</div>
+                  <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">3.943</div>
                   <div className="text-sm text-green-700 dark:text-green-300 font-medium">GPA</div>
                 </div>
                 <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-6 rounded-2xl border border-orange-200 dark:border-orange-700/30">
