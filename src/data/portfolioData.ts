@@ -145,6 +145,12 @@ export const portfolioData = {
 
   experience: [
     {
+      title: "AI Engineer Intern",
+      company: "beaconAI",
+      period: "Sep 2025 - Present",
+      location: "Colorado, United States",
+    },
+    {
       title: "Data Engineer Intern",
       company: "Truve",
       period: "May 2025 - Aug 2025",
@@ -265,7 +271,7 @@ export const portfolioData = {
       keyPoints: [
         "Encoded image inputs with ResNet18 and questions using GloVe + custom tokenization.",
         "Used bi-directional cross-attention to fuse visual and textual features.",
-        "Model 1: Binary classifier for answerability (Val Accuracy: 78.6%).",
+        "Model 1: Binary classifier for answerability (Val Accuracy: 92.6%).",
         "Model 2: Multiclass answer generator (Val Accuracy: 85.3%).",
         "Optimized hyperparameters using Optuna for learning rate, batch size, and attention dims."
       ],
