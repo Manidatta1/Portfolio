@@ -225,7 +225,7 @@ export const portfolioData = {
       image: "https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      title: "Student Performance Factors Analysis",
+      title: "Statistical Analysis of Student Performance",
       description: "Explored how academic, behavioral, and socio-economic factors affect student exam scores using statistical analysis on a dataset of 6600+ records and 20 variables.",
       keyPoints: [
         "Analyzed 6,607 student records to measure the impact of study habits, attendance, tutoring, and resources on exam scores using the t-tests, levene test, correlation and bootstrapping.",
