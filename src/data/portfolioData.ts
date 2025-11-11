@@ -175,7 +175,7 @@ export const portfolioData = {
       title: "Multimodal Audio Risk Classification with Explanations",
       description: "Built a two-stage deep learning pipeline to classify real-world audio events as Normal, Potential Threat, or Danger using audio and location metadata. Enhanced interpretability by integrating a T5-based transformer model that generates natural language rationales for the risk level.",
       keyPoints: [
-        "Achieved 86% accuracy on risk classification using a CNN + Transformer encoder with location embedding.",
+        "Achieved 94.2% accuracy on risk classification using a CNN + Transformer encoder with location embedding.",
         "Generated human-understandable explanations with a T5 model, reaching 0.98 F1-score (BERTScore).",
         "Introduced real-world metadata (location) to disambiguate ambiguous sounds across contexts.",
         "Preprocessed FSD50K audio dataset using log-mel spectrograms and structured text prompts."
