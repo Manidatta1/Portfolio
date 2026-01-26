@@ -15,13 +15,14 @@ export const portfolioData = {
       degree: "Master of Science in Data Science",
       school: "University of Colorado Boulder",
       year: "Aug 2024- May 2026",
-      gpa: "3.943/4.0",
+      gpa: "3.954/4.0",
       coursework: [
         "Machine Learning",
         "Deep Learning & Neural Networks",
         "Statistical Methods and Applications",
         "Data Mining",
-        "Data Center Scale Computing"
+        "Data Center Scale Computing",
+        "Information Visualization"
       ]
     },
     {
@@ -145,9 +146,21 @@ export const portfolioData = {
 
   experience: [
     {
+      title: "Data Science Intern",
+      company: "Ramsi",
+      period: "Jan 2025 - Present",
+      location: "Colorado, United States",
+    },
+    {
+      title: "AI/ML Research Assistant",
+      company: "University of Colorado Boulder",
+      period: "Dec 2025 - Present",
+      location: "Colorado, United States",
+    },
+    {
       title: "AI Engineer Intern",
       company: "beaconAI",
-      period: "Sep 2025 - Present",
+      period: "Sep 2025 - Nov 2025",
       location: "Colorado, United States",
     },
     {
@@ -160,7 +173,7 @@ export const portfolioData = {
       title: "Data and API Engineer",
       company: "NCR Voyix",
       period: "Feb 2023 - Aug 2024",
-      location: "Hyderabad, India",
+      location: "Georgia, United States",
     },
     {
       title: "Data Science Intern",
@@ -173,123 +186,232 @@ export const portfolioData = {
   projects: [
     {
       title: "Multimodal Audio Risk Classification with Explanations",
-      description: "Built a two-stage deep learning pipeline to classify real-world audio events as Normal, Potential Threat, or Danger using audio and location metadata. Enhanced interpretability by integrating a T5-based transformer model that generates natural language rationales for the risk level.",
+      description: "This project demonstrates how multimodal deep learning can be used to classify real-world audio events into risk levels and generate human-readable explanations. It combines log-mel spectrograms, location metadata, a CNN–Transformer encoder, and a T5-based explanation model for interpretable audio risk assessment.",
       keyPoints: [
-        "Achieved 94.2% accuracy on risk classification using a CNN + Transformer encoder with location embedding.",
-        "Generated human-understandable explanations with a T5 model, reaching 0.98 F1-score (BERTScore).",
-        "Introduced real-world metadata (location) to disambiguate ambiguous sounds across contexts.",
-        "Preprocessed FSD50K audio dataset using log-mel spectrograms and structured text prompts."
+        "Built a multimodal audio pipeline using log-mel spectrograms + location metadata for risk classification.",
+        "Implemented a CNN + Transformer encoder to classify audio into Normal, Potential Threat, or Danger.",
+        "Achieved ~94.2% test accuracy for risk classification after Optuna-based hyperparameter tuning.",
+        "Integrated a T5-based explanation model to generate rationales, reaching 0.98 BERTScore F1.",
+        "Improved interpretability for safety-critical predictions via paired label + explanation outputs."
       ],
-      technologies: ["Python", "PyTorch", "Transformers", "Text Embeddings", "Hyperparameter Tuning"],
+      technologies: [
+        "Python",
+        "Multimodal Learning",
+        "CNNs",
+        "Transformers",
+        "T5",
+        "BERT",
+        "Spectrogram-Based Audio Processing",
+        "Optuna"
+      ],
       github: "https://github.com/Manidatta1/Multi-Modal-Audio-Risk-Explanation",
       image: "https://images.pexels.com/photos/3394650/pexels-photo-3394650.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
-      title: "Credit Card Fraud Detection using Self-Organizing Maps",
-      description: "Developed a Self-Organizing Maps (SOM) model to detect fraudulent credit card applications. The model clusters customers based on application features to identify instances of fraud. Visualization of SOM distance maps and fraud mappings provided actionable insights.",
+      title: "Cloud-Native Appointment System",
+      description: "This project demonstrates how cloud-native microservices can be designed and deployed to build a scalable healthcare appointment system. It uses FastAPI-based services, asynchronous messaging, Redis caching, and PostgreSQL, all containerized with Docker and orchestrated on Google Kubernetes Engine with CI/CD automation.",
       keyPoints: [
-        "Implemented a 10x10 SOM to learn complex patterns in credit card application data.",
-        "Visualized the SOM's distance map using pcolor and marker plotting.",
-        "Extracted and inverse-transformed fraudulent mappings for further analysis.",
-        "Provided a robust unsupervised method to identify anomalies in customer data."
+        "Designed and implemented a cloud-native microservices architecture for healthcare appointment scheduling.",
+        "Built FastAPI services for appointments, authentication (JWT), doctors/patients, and slot management.",
+        "Integrated RabbitMQ for async workflows and Redis for caching + distributed locking to prevent double-booking.",
+        "Deployed on Google Kubernetes Engine using Docker + Helm; automated CI/CD with GitHub Actions and Artifact Registry.",
+        "Operationalized the system with service-based deployments and LoadBalancer access on GKE."
       ],
-      technologies: ["Python", "Deep Learning"],
+      technologies: [
+        "Python",
+        "Microservices",
+        "FastAPI",
+        "JWT Authentication",
+        "React.js",
+        "RabbitMQ",
+        "Redis",
+        "Google Kubernetes Engine (GKE)",
+        "Helm Charts",
+        "Apache Airflow",
+        "GitHub Actions",
+        "CI/CD",
+        "Container Orchestration",
+        "JavaScript"
+      ],
+      github: "https://github.com/Manidatta1/A-Cloud-Native-Appointment-System",
+      image: "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      title: "Credit Card Fraud Detection using Self-Organizing Maps",
+      description: "This project demonstrates how Self-Organizing Maps can be used for unsupervised clustering and anomaly detection in high-dimensional data. It applies MiniSom to credit card application data, visualizing cluster structures with U-Matrix plots and identifying potential anomalous patterns.",
+      keyPoints: [
+        "Implemented a 10x10 Self-Organizing Map (MiniSom) to learn structure in credit card application data.",
+        "Normalized and prepared high-dimensional features to preserve topology during SOM training.",
+        "Visualized cluster boundaries using U-Matrix distance maps and marker overlays.",
+        "Extracted and inverse-transformed suspicious mappings for deeper anomaly investigation.",
+        "Demonstrated an unsupervised approach for anomaly/fraud candidate discovery."
+      ],
+      technologies: [
+        "Python",
+        "Self-Organizing Maps (SOMs)",
+        "Python",
+        "MiniSom",
+        "Data Analysis",
+        "Dimensionality Reduction",
+        "Cluster Analysis",
+        "Heatmaps"
+      ],
       github: "https://github.com/Manidatta1/Credit-Card-Fraud-Detection",
       image: "https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       title: "Trend Analysis Across Diverse Fields",
-      description: "Performed predictive analytics and trend forecasting across multiple sectors including environment, healthcare, agriculture, and weather using machine learning models. Leveraged real-time data from APIs and built models to project future outcomes for 2025.",
+      description: "This project demonstrates how machine learning–based forecasting can be applied across agriculture, weather, environment, health, and economic domains. It uses ensemble models such as XGBoost, Random Forest, and Gradient Boosting to analyze trends and predict future indicators with high accuracy.",
       keyPoints: [
-        "Predicted GHG emissions across countries using Bagging Regressor (R² = 0.87).",
-        "Forecasted total health expenditures using Random Forest (R² = 0.89).",
-        "Estimated malaria incidence for WHO regions with KNN Regressor (R² = 0.98).",
-        "Used XGBoost to forecast maize production and food supply per capita for 9+ countries.",
-        "Built a weather model using Gradient Boosting (R² > 0.83) for daily temperature predictions."
+        "Built cross-domain forecasting models across agriculture, weather, environment, health, and economic indicators.",
+        "Implemented XGBoost, Random Forest, Gradient Boosting, Bagging Regressor, and KNN on historical multi-country datasets.",
+        "Achieved strong predictive performance with R² up to 0.98 across multiple domain tasks.",
+        "Forecasted metrics including maize production, food supply, temperature trends, malaria incidence, GDP growth, and inflation.",
+        "Published interactive visualizations and a web dashboard via GitHub Pages to communicate insights."
       ],
-      technologies: ["Python", "Machine Learning"],
+      technologies: [
+        "Decision Trees",
+        "Random Forest",
+        "K-Nearest Neighbors (KNN)",
+        "XGBoost",
+        "Gradient Boosting",
+        "Python",
+        "Forecasting",
+        "Data Analysis"
+      ],
       github: "https://github.com/Manidatta1/Trend-Analysis-Across-the-Diverse-Fields",
       image: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       title: "NASA APOD ETL Pipeline with Airflow and Postgres",
-      description: "Developed an automated ETL pipeline to ingest and archive NASA's Astronomy Picture of the Day (APOD) data using Apache Airflow and PostgreSQL. The system extracts image metadata via API, transforms it into structured JSON, and stores it in a local database for long-term access and analysis. This project emphasizes workflow orchestration, data engineering, and automation of daily ingestion tasks.",
+      description: "This project demonstrates how automated ETL pipelines can be built using Apache Airflow and PostgreSQL. It ingests daily data from NASA’s APOD API, transforms it into structured format, and loads it into a database using containerized, scheduled workflows.",
       keyPoints: [
-        "Designed automated ETL pipeline using the Apache Airflow to extract NASA Astronomy Picture of the Day API data using Simple Http Operator.",
-        "Transformed the API responses into json format and loaded them into the PostgreSQL database using PostgresHook.",
-        "Orchestrated the task flows with Airflow DAGs and deployed PostgreSQL locally through the Docker containers.",
-        "Daily ingestion and storage of image metadata is enabled, supports data archiving without manual intervention."
+        "Built an automated ETL pipeline to ingest NASA Astronomy Picture of the Day (APOD) data daily.",
+        "Implemented extraction using Airflow SimpleHttpOperator and transformation into structured JSON.",
+        "Loaded processed metadata into PostgreSQL using Airflow PostgresHook for persistent storage.",
+        "Containerized Airflow + Postgres with Docker Compose for reproducible local execution.",
+        "Orchestrated the workflow as a scheduled Airflow DAG with end-to-end automation."
       ],
-      technologies: ["Python", "Docker", "Airflow", "PostgreSQL"],
+      technologies: [
+        "Apache Airflow",
+        "PostgreSQL",
+        "Docker",
+        "Python",
+        "ETL Pipelines",
+        "Directed Acyclic Graphs (DAGs)",
+        "Airflow Operators"
+      ],
       github: "https://github.com/Manidatta1/NASA-APOD-ETL-Pipeline-with-Airflow-and-Postgres",
       image: "https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       title: "Statistical Analysis of Student Performance",
-      description: "Explored how academic, behavioral, and socio-economic factors affect student exam scores using statistical analysis on a dataset of 6600+ records and 20 variables.",
+      description: "This project demonstrates how statistical analysis can be used to identify factors influencing student academic performance. It applies hypothesis testing, regression, ANOVA, and bootstrapping in R to uncover relationships between demographics, study habits, and exam outcomes.",
       keyPoints: [
-        "Analyzed 6,607 student records to measure the impact of study habits, attendance, tutoring, and resources on exam scores using the t-tests, levene test, correlation and bootstrapping.",
-        "Cleaned the dataset, removing 104 outliers, imputing the missing values with mode, and engineering the new study and attendance groups.",
-        "Conducted hypothesis testing concluded that significant effects of internet access(p-value = 5.28e-08), study group(p-value ≤2.2e-16), parental education(p-value ≤2e-16) on exam performance.",
-        "Estimated conditional probabilities of scoring above thresholds under tutoring conditions.",
-        "Bootstrapped confidence interval of 95% ranging from 67 to 67.15 is derived for mean exam scores and found that 15.5% of students scored above 70."
+        "Performed statistical analysis to identify key drivers of student exam performance using an educational data of 660,007 students.",
+        "Applied t-tests, Levene’s test, Chi-square tests, confidence intervals, ANOVA, regression, and bootstrapping.",
+        "Found internet access significantly improved performance (p = 5.28e-08) and >10 study hours correlated with higher scores.",
+        "Estimated the mean exam score with a 95% confidence interval of 67.00 to 67.15.",
+        "Visualized distributions and group differences using ggplot2, boxplots, bar charts, and density plots."
       ],
-      technologies: ["R", "Hypothesis Testing", "Probability", "Distribution Analysis"],
+      technologies: [
+        "R",
+        "Hypothesis Testing",
+        "Confidence Intervals",
+        "Bootstrapping",
+        "Statistical Sampling",
+        "Exploratory Data Analysis (EDA)",
+        "Analysis of Variance (ANOVA)",
+        "T-Tests",
+        "Levene’s Test",
+        "Chi-Square Tests",
+        "Data Analysis"
+      ],
       github: "https://github.com/Manidatta1/Student-Performance-Statistical-Analysis",
       image: "https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       title: "Crop Disease Detection using Convolutional Neural Networks",
-      description: "Built a CNN-based image classification system to identify diseases in crop leaves and recommend preventive/curative actions. Used transfer learning with VGG19 for high accuracy.",
+      description: "This project demonstrates how deep learning and computer vision can be used to detect crop diseases from plant images. It leverages a VGG19-based CNN deployed on a Raspberry Pi with a camera module to perform real-time disease classification and suggest appropriate treatments.",
       keyPoints: [
-        "Used transfer learning (VGG19) for multi-class classification on leaf images.",
-        "Trained with data augmentation (zoom, shear, flip) to improve generalization.",
-        "Achieved high accuracy across 38 disease categories including tomato, corn, grape, citrus.",
-        "Mapped predictions to treatment and precaution guidelines per disease."
+        "Built an image-based crop disease detection system using deep learning and computer vision.",
+        "Trained a VGG19-based CNN to classify healthy vs diseased plant leaves across multiple categories.",
+        "Deployed the model on a Raspberry Pi with a camera module for real-time on-device inference.",
+        "Added disease-to-treatment mapping to suggest medicine/recommendations based on predicted class.",
+        "Targeted early detection to reduce agricultural losses and support low-infrastructure environments."
       ],
-      technologies: ["Python", "Deep Learning", "Image Processing"],
+      technologies: [
+        "Python",
+        "Convolutional Neural Networks (CNNs)",
+        "VGG19",
+        "Python",
+        "OpenCV",
+        "Raspberry Pi",
+        "Data Analysis"
+      ],
       github: "https://github.com/Manidatta1/Crop-Disease-Detection",
       image: "https://images.pexels.com/photos/4750274/pexels-photo-4750274.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       title: "Regularization Strategies on KMNIST Dataset",
-      description: "Conducted a performance analysis of regularization techniques like Dropout, L2 Regularization, and SGD with Momentum on the KMNIST dataset using a CNN architecture.",
+      description: "This project demonstrates how regularization techniques affect CNN generalization on handwritten image data. It evaluates Dropout, L2 regularization, and SGD with momentum on the KMNIST dataset, analyzing performance across multiple data splits.",
       keyPoints: [
-        "Built CNN with 5 convolutional layers and 2 FC layers for Japanese character classification.",
-        "Applied Dropout (0.2), L2 Regularization (weight decay), and Momentum (SGD with 0.9).",
-        "Evaluated models on varying data splits (25%, 50%, 75%, 100%).",
-        "Achieved best accuracy of 95.87% using SGD + Momentum on 75% data.",
-        "Visualized method-wise performance using bar charts and test metrics."
+        "Evaluated how regularization strategies impact CNN generalization on the KMNIST handwritten character dataset.",
+        "Compared baseline vs Dropout (p=0.2), L2 weight decay (0.0001), and SGD with momentum (0.9) across data splits.",
+        "Achieved 95.87% best accuracy using SGD with momentum on the 75% split and 94.65% using Dropout on only 25% data.",
+        "Analyzed precision/recall tradeoffs and overfitting behavior across training sizes.",
+        "Summarized findings with metric comparisons and visualization-driven evaluation."
       ],
-      technologies: ["Python", "PyTorch", "Hyperparameter Tuning", "Image Processing"],
+      technologies: [
+        "Convolutional Neural Networks (CNNs)",
+        "Stochastic Gradient Descent (SGD)",
+        "L2 Regularization",
+        "Dropout",
+        "Python",
+        "Data Analysis"
+      ],
       github: "https://github.com/Manidatta1/Regularization-Strategies-on-KMNIST-Dataset",
       image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       title: "Visual Question Answering (Multimodal Learning)",
-      description: "Designed a two-model system for visual question answering using multimodal learning. The first model determines question answerability based on image context, and the second model generates answers using cross-attention between vision and language.",
+      description: "This project demonstrates how multimodal architectures can be applied to visual question answering using image and text inputs. It implements answerability classification and answer generation models with CNNs, GloVe embeddings, and cross-attention, achieving strong performance on the real-world VizWiz dataset.",
       keyPoints: [
-        "Encoded image inputs with ResNet18 and questions using GloVe + custom tokenization.",
-        "Used bi-directional cross-attention to fuse visual and textual features.",
-        "Model 1: Binary classifier for answerability (Val Accuracy: 92.6%).",
-        "Model 2: Multiclass answer generator (Val Accuracy: 85.3%).",
-        "Optimized hyperparameters using Optuna for learning rate, batch size, and attention dims."
+        "Developed a two-stage VQA system on the VizWiz dataset: answerability detection + answer generation.",
+        "Answerability model used CNN image encoding + GloVe embeddings + cross-attention fusion.",
+        "Answer generation model used fine-tuned ResNet18 + GloVe + multi-head cross-attention over 301 answer classes.",
+        "Achieved 95.6% accuracy for answerability classification and 91.3% accuracy for answer generation.",
+        "Optimized key hyperparameters using Optuna without relying on large pretrained language models."
       ],
-      technologies: ["Python", "PyTorch", "Image Processing", "Transformers", "Hyperparameter Tuning", "Text Embeddings"],
+      technologies: [
+        "Python",
+        "Convolutional Neural Networks (CNNs)",
+        "ResNet18",
+        "GloVe Embeddings",
+        "Multi-Head Attention",
+        "Multimodal Learning",
+        "Hyperparameter Tuning"
+      ],
       github: "https://github.com/Manidatta1/Visual-Question-Answering",
       image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       title: "Parking Slot Detection",
-      description: "Developed an automated parking slot monitoring system using color-based segmentation and a ResNet18 model to classify slots as occupied or available. Integrated OpenCV and PyTorch for real-time inference and Excel report generation.",
+      description: "This project demonstrates how computer vision can be used to automate parking slot occupancy detection from images. It applies color-based segmentation and a ResNet18 classifier using OpenCV and PyTorch to identify occupied and available slots, producing annotated outputs and Excel-based occupancy reports.",
       keyPoints: [
-        "Built a CV pipeline using color segmentation and bounding box annotation for parking slot extraction.",
-        "Trained a ResNet18 classifier on cropped slot images (94% accuracy) using PyTorch.",
-        "Enabled real-time prediction with slot overlay visualization (blue: available, orange: occupied).",
-        "Exported usage stats to Excel with timestamps for occupancy tracking.",
-        "Supports easy annotation via drag-and-drop UI and slot coordinate saving."
+        "Built an end-to-end computer vision pipeline to detect parking slot occupancy from static images.",
+        "Used HSV color-based segmentation to pre-crop slot regions and reduce background noise.",
+        "Created a manual bounding-box annotation tool to build labeled training data for slot classification.",
+        "Trained a ResNet18-based binary classifier to label slots as Occupied or Available.",
+        "Produced visual overlays and automated Excel reports with timestamps, slot summary, and occupancy stats."
       ],
-      technologies: ["Python", "Computer Vision", "Deep Learning", "Image Processing"],
+      technologies: [
+        "Python",
+        "OpenCV",
+        "ResNet18",
+        "PyTorch",
+        "Data Annotation"
+      ],
       github: "https://github.com/Manidatta1/Parking-Slot-Detection",
       image: "https://images.pexels.com/photos/28948284/pexels-photo-28948284.jpeg?auto=compress&cs=tinysrgb&w=600"
     }
