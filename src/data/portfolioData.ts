@@ -196,8 +196,9 @@ export const portfolioData = {
       ],
       technologies: [
         "Python",
+        "Deep Learning",
         "Multimodal Learning",
-        "CNNs",
+        "Convolutional Neural Networks (CNNs)",
         "Transformers",
         "T5",
         "BERT",
@@ -219,6 +220,7 @@ export const portfolioData = {
       ],
       technologies: [
         "Python",
+        "DevOps",
         "Microservices",
         "FastAPI",
         "JWT Authentication",
@@ -248,6 +250,7 @@ export const portfolioData = {
       ],
       technologies: [
         "Python",
+        "Deep Learning",
         "Self-Organizing Maps (SOMs)",
         "Python",
         "MiniSom",
@@ -270,6 +273,7 @@ export const portfolioData = {
         "Published interactive visualizations and a web dashboard via GitHub Pages to communicate insights."
       ],
       technologies: [
+        "Machine Learning",
         "Decision Trees",
         "Random Forest",
         "K-Nearest Neighbors (KNN)",
@@ -342,6 +346,7 @@ export const portfolioData = {
       ],
       technologies: [
         "Python",
+        "Deep Learning",
         "Convolutional Neural Networks (CNNs)",
         "VGG19",
         "Python",
@@ -363,6 +368,7 @@ export const portfolioData = {
         "Summarized findings with metric comparisons and visualization-driven evaluation."
       ],
       technologies: [
+        "Deep Learning",
         "Convolutional Neural Networks (CNNs)",
         "Stochastic Gradient Descent (SGD)",
         "L2 Regularization",
@@ -385,6 +391,7 @@ export const portfolioData = {
       ],
       technologies: [
         "Python",
+        "Deep Learning",
         "Convolutional Neural Networks (CNNs)",
         "ResNet18",
         "GloVe Embeddings",
@@ -407,6 +414,7 @@ export const portfolioData = {
       ],
       technologies: [
         "Python",
+        "Deep Learning",
         "OpenCV",
         "ResNet18",
         "PyTorch",
