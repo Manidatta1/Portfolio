@@ -10,18 +10,19 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white relative overflow-x-hidden overflow-y-visible" style={{ width: '100%', maxWidth: '100vw', paddingTop: '2rem' }}>
-      {/* Scroll to Top Button */}
+    <>
+      {/* Scroll to Top Button - Positioned fixed to avoid clipping */}
       <button
         onClick={scrollToTop}
-        className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 transition-all duration-300 hover:scale-110 z-50"
+        className="fixed bottom-20 left-1/2 transform -translate-x-1/2 p-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 transition-all duration-300 hover:scale-110 z-50"
         aria-label="Scroll to top"
-        style={{ zIndex: 50 }}
+        style={{ zIndex: 1000 }}
       >
         <ArrowUp size={20} />
       </button>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" style={{ width: '100%', maxWidth: '100%' }}>
+      
+      <footer className="bg-gray-900 dark:bg-gray-950 text-white relative overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" style={{ width: '100%', maxWidth: '100%' }}>
         <div className="flex justify-center">
           {/* Social Links - Centered */}
           <div className="space-y-6 text-center">
@@ -68,8 +69,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+        </div>
+      </footer>
+    </>
   );
 };
 

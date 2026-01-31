@@ -15,7 +15,7 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
         <Header />
-        <main>
+        <main style={{ overflowY: 'visible', overflowX: 'hidden' }}>
           <Hero />
           <About />
           <Education />

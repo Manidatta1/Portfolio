@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 pb-24 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden overflow-y-visible" ref={ref} style={{ width: '100%', maxWidth: '100vw' }}>
+    <section id="contact" className="py-20 pb-32 sm:pb-40 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden overflow-y-visible" ref={ref} style={{ width: '100%', maxWidth: '100vw', marginBottom: '0', zIndex: 1 }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ width: '100%', maxWidth: '100%' }}>
         <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 md:opacity-0 translate-y-0 md:translate-y-10'}`}>
           <div className="text-center mb-16">

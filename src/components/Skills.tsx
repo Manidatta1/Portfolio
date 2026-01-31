@@ -99,21 +99,22 @@ const Skills: React.FC = () => {
                         onClick={() => setActiveDropdown(null)}
                       />
                       
-                      {/* Modal-style dropdown */}
-                      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-600 max-w-md w-full max-h-96 overflow-hidden animate-fade-in">
-                          <div className="p-4 border-b border-gray-200 dark:border-gray-600">
+                      {/* Modal-style dropdown - Positioned at top for better visibility */}
+                      <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-8 sm:pt-16 overflow-y-auto">
+                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-600 max-w-md w-full max-h-[85vh] overflow-hidden animate-fade-in">
+                          <div className="p-4 border-b border-gray-200 dark:border-gray-600 sticky top-0 bg-white dark:bg-gray-800 z-10">
                             <div className="flex items-center justify-between">
                               <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{concept}</h4>
                               <button
                                 onClick={() => setActiveDropdown(null)}
                                 className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
+                                aria-label="Close"
                               >
                                 <ChevronDown size={20} className="text-gray-500 dark:text-gray-400 rotate-180" />
                               </button>
                             </div>
                           </div>
-                          <div className="max-h-80 overflow-y-auto">
+                          <div className="overflow-y-auto max-h-[calc(85vh-80px)]">
                             <div className="p-4 space-y-3">
                               {details.map((detail, detailIndex) => (
                                 <div 
