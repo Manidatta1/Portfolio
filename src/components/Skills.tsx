@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Code, Database, Settings, Brain, ChevronDown } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { portfolioData } from '../data/portfolioData';
@@ -6,6 +6,7 @@ import { portfolioData } from '../data/portfolioData';
 const Skills: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const modalContentRef = useRef<HTMLDivElement>(null);
 
   const skillCategories = [
     {
@@ -29,6 +30,29 @@ const Skills: React.FC = () => {
   ];
 
   const conceptCategories = Object.entries(portfolioData.skills.concepts);
+
+  // Reset scroll position when modal opens - ensure list always starts from top
+  useEffect(() => {
+    if (activeDropdown) {
+      // Small delay to ensure DOM is updated
+      setTimeout(() => {
+        // Reset scroll of the content area to show from top (first item)
+        const scrollableContent = document.querySelector('[data-modal-content]') as HTMLElement;
+        if (scrollableContent) {
+          scrollableContent.scrollTop = 0;
+        }
+        // Also ensure the outer container scrolls to top
+        const modalContainer = document.querySelector('[data-modal-container]') as HTMLElement;
+        if (modalContainer) {
+          modalContainer.scrollTop = 0;
+        }
+      }, 50);
+    }
+  }, [activeDropdown]);
+
+  const handleConceptClick = (concept: string) => {
+    setActiveDropdown(activeDropdown === concept ? null : concept);
+  };
 
   return (
     <section id="skills" className="py-20 bg-gradient-to-br from-gray-50 to-primary-50 dark:from-gray-800 dark:to-gray-900 overflow-x-hidden" ref={ref} style={{ width: '100%', maxWidth: '100vw' }}>
@@ -79,7 +103,7 @@ const Skills: React.FC = () => {
               {conceptCategories.map(([concept, details], index) => (
                 <div key={concept} className="relative">
                   <button
-                    onClick={() => setActiveDropdown(activeDropdown === concept ? null : concept)}
+                    onClick={() => handleConceptClick(concept)}
                     className="w-full p-4 bg-gradient-to-r from-primary-500 to-secondary-500 dark:from-primary-600 dark:to-secondary-600 text-white rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 dark:hover:from-primary-500 dark:hover:to-secondary-500 transition-all duration-300 flex items-center justify-between group min-h-[60px]"
                   >
                     <span className="text-sm font-medium text-left leading-tight pr-2">{concept}</span>
@@ -100,8 +124,22 @@ const Skills: React.FC = () => {
                       />
                       
                       {/* Modal-style dropdown - Positioned at top for better visibility */}
-                      <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-8 sm:pt-16 overflow-y-auto">
-                        <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-600 max-w-md w-full max-h-[85vh] overflow-hidden animate-fade-in">
+                      <div 
+                        data-modal-container
+                        className="fixed inset-0 z-50 flex items-start justify-start sm:justify-center p-4 pt-4 sm:pt-8 overflow-y-auto"
+                        onClick={(e) => {
+                          // Close if clicking backdrop
+                          if (e.target === e.currentTarget) {
+                            setActiveDropdown(null);
+                          }
+                        }}
+                        style={{ scrollTop: 0 }}
+                      >
+                        <div 
+                          ref={modalContentRef}
+                          className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-600 max-w-md w-full max-h-[90vh] overflow-hidden animate-fade-in mt-4 sm:mt-8"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <div className="p-4 border-b border-gray-200 dark:border-gray-600 sticky top-0 bg-white dark:bg-gray-800 z-10">
                             <div className="flex items-center justify-between">
                               <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{concept}</h4>
@@ -114,7 +152,11 @@ const Skills: React.FC = () => {
                               </button>
                             </div>
                           </div>
-                          <div className="overflow-y-auto max-h-[calc(85vh-80px)]">
+                          <div 
+                            data-modal-content
+                            className="overflow-y-auto max-h-[calc(90vh-80px)]"
+                            style={{ scrollBehavior: 'auto', scrollTop: 0 }}
+                          >
                             <div className="p-4 space-y-3">
                               {details.map((detail, detailIndex) => (
                                 <div 
