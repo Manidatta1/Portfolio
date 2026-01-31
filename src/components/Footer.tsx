@@ -10,12 +10,13 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white relative overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw' }}>
+    <footer className="bg-gray-900 dark:bg-gray-950 text-white relative overflow-x-hidden overflow-y-visible" style={{ width: '100%', maxWidth: '100vw', paddingTop: '2rem' }}>
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="absolute -top-6 left-1/2 transform -translate-x-1/2 p-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 transition-all duration-300 hover:scale-110"
+        className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 rounded-full shadow-lg hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 transition-all duration-300 hover:scale-110 z-50"
         aria-label="Scroll to top"
+        style={{ zIndex: 50 }}
       >
         <ArrowUp size={20} />
       </button>
