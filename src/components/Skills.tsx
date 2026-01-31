@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Code, Database, Settings, Brain, ChevronDown } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { portfolioData } from '../data/portfolioData';
@@ -6,7 +6,6 @@ import { portfolioData } from '../data/portfolioData';
 const Skills: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const modalContentRef = useRef<HTMLDivElement>(null);
 
   const skillCategories = [
     {
@@ -30,29 +29,6 @@ const Skills: React.FC = () => {
   ];
 
   const conceptCategories = Object.entries(portfolioData.skills.concepts);
-
-  // Reset scroll position when modal opens - ensure list always starts from top
-  useEffect(() => {
-    if (activeDropdown) {
-      // Prevent body scroll when modal is open
-      const originalOverflow = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      
-      // Small delay to ensure DOM is updated
-      setTimeout(() => {
-        // Reset scroll of the content area to show from top (first item)
-        const scrollableContent = document.querySelector('[data-modal-content]') as HTMLElement;
-        if (scrollableContent) {
-          scrollableContent.scrollTop = 0;
-        }
-      }, 50);
-      
-      // Cleanup: restore body scroll when modal closes
-      return () => {
-        document.body.style.overflow = originalOverflow;
-      };
-    }
-  }, [activeDropdown]);
 
   const handleConceptClick = (concept: string) => {
     setActiveDropdown(activeDropdown === concept ? null : concept);
@@ -103,9 +79,9 @@ const Skills: React.FC = () => {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Core Concepts</h3>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="space-y-4">
               {conceptCategories.map(([concept, details], index) => (
-                <div key={concept} className="relative">
+                <div key={concept}>
                   <button
                     onClick={() => handleConceptClick(concept)}
                     className="w-full p-4 bg-gradient-to-r from-primary-500 to-secondary-500 dark:from-primary-600 dark:to-secondary-600 text-white rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 dark:hover:from-primary-500 dark:hover:to-secondary-500 transition-all duration-300 flex items-center justify-between group min-h-[60px]"
@@ -119,63 +95,21 @@ const Skills: React.FC = () => {
                     />
                   </button>
                   
+                  {/* Inline expandable list - appears directly below the button */}
                   {activeDropdown === concept && (
-                    <>
-                      {/* Backdrop */}
-                      <div 
-                        className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
-                        onClick={() => setActiveDropdown(null)}
-                      />
-                      
-                      {/* Modal-style dropdown - Always visible in viewport center */}
-                      <div 
-                        data-modal-container
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-                        onClick={(e) => {
-                          // Close if clicking backdrop
-                          if (e.target === e.currentTarget) {
-                            setActiveDropdown(null);
-                          }
-                        }}
-                        style={{ overflow: 'auto' }}
-                      >
-                        <div 
-                          ref={modalContentRef}
-                          className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-600 max-w-md w-full max-h-[85vh] overflow-hidden animate-fade-in my-auto"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <div className="p-4 border-b border-gray-200 dark:border-gray-600 sticky top-0 bg-white dark:bg-gray-800 z-10">
-                            <div className="flex items-center justify-between">
-                              <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{concept}</h4>
-                              <button
-                                onClick={() => setActiveDropdown(null)}
-                                className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
-                                aria-label="Close"
-                              >
-                                <ChevronDown size={20} className="text-gray-500 dark:text-gray-400 rotate-180" />
-                              </button>
-                            </div>
-                          </div>
+                    <div className="mt-4 bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-600 shadow-lg overflow-hidden animate-fade-in">
+                      <div className="p-4 space-y-3 max-h-96 overflow-y-auto">
+                        {details.map((detail, detailIndex) => (
                           <div 
-                            data-modal-content
-                            className="overflow-y-auto max-h-[calc(85vh-80px)]"
-                            style={{ scrollBehavior: 'auto' }}
+                            key={detailIndex}
+                            className="flex items-start gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
                           >
-                            <div className="p-4 space-y-3">
-                              {details.map((detail, detailIndex) => (
-                                <div 
-                                  key={detailIndex}
-                                  className="flex items-start gap-3 p-3 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200"
-                                >
-                                  <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{detail}</span>
-                                </div>
-                              ))}
-                            </div>
+                            <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{detail}</span>
                           </div>
-                        </div>
+                        ))}
                       </div>
-                    </>
+                    </div>
                   )}
                 </div>
               ))}
