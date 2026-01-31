@@ -5,6 +5,10 @@ export const useScrollAnimation = (threshold: number = 0.1) => {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Detect mobile devices
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+                     (window.innerWidth <= 768);
+
     // Check if IntersectionObserver is supported
     if (!('IntersectionObserver' in window)) {
       // Fallback: show content immediately if IntersectionObserver is not supported
@@ -31,7 +35,7 @@ export const useScrollAnimation = (threshold: number = 0.1) => {
       },
       {
         threshold,
-        rootMargin: '100px 0px -50px 0px', // Increased top margin for better mobile detection
+        rootMargin: isMobile ? '200px 0px -50px 0px' : '100px 0px -50px 0px', // Larger margin for mobile
       }
     );
 
@@ -40,18 +44,19 @@ export const useScrollAnimation = (threshold: number = 0.1) => {
 
       // Fallback: if element is already in viewport on mount, show it
       const rect = currentRef.getBoundingClientRect();
-      const isInViewport = rect.top < window.innerHeight * 1.5 && rect.bottom > -100;
+      const isInViewport = rect.top < window.innerHeight * 2 && rect.bottom > -200;
       if (isInViewport) {
         setIsVisible(true);
       } else {
-        // Fallback timeout: show content after 1 second if observer hasn't fired
-        // This ensures content is visible even if IntersectionObserver has issues
+        // More aggressive timeout for mobile: 300ms for mobile, 1s for desktop
+        // This ensures content is visible quickly on mobile devices
+        const timeoutDuration = isMobile ? 300 : 1000;
         timeoutId = setTimeout(() => {
           setIsVisible(true);
           if (currentRef) {
             observer.unobserve(currentRef);
           }
-        }, 1000);
+        }, timeoutDuration);
       }
     }
 
