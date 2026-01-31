@@ -5,9 +5,11 @@ export const useScrollAnimation = (threshold: number = 0.1) => {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // Detect mobile devices
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
-                     (window.innerWidth <= 768);
+    // Detect mobile devices - comprehensive detection
+    const isMobile = /iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent) || 
+                     (window.innerWidth <= 768) ||
+                     ('ontouchstart' in window) ||
+                     (navigator.maxTouchPoints > 0);
 
     // Check if IntersectionObserver is supported
     if (!('IntersectionObserver' in window)) {
