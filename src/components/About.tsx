@@ -11,20 +11,20 @@ const About: React.FC = () => {
 
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 relative" ref={ref}>
+    <section id="about" className="py-20 bg-white dark:bg-gray-900 relative overflow-x-hidden" ref={ref} style={{ width: '100%', maxWidth: '100vw', boxSizing: 'border-box' }}>
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2280%22%20height=%2280%22%20viewBox=%220%200%2080%2080%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%23f3f4f6%22%20fill-opacity=%220.4%22%3E%3Cpath%20d=%22M0%200h80v80H0V0zm20%2020v40h40V20H20zm20%2035a15%2015%200%201%201%200-30%2015%2015%200%200%201%200%2030z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] dark:bg-[url('data:image/svg+xml,%3Csvg%20width=%2280%22%20height=%2280%22%20viewBox=%220%200%2080%2080%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg%20fill=%22none%22%20fill-rule=%22evenodd%22%3E%3Cg%20fill=%22%23374151%22%20fill-opacity=%220.1%22%3E%3Cpath%20d=%22M0%200h80v80H0V0zm20%2020v40h40V20H20zm20%2035a15%2015%200%201%201%200-30%2015%2015%200%200%201%200%2030z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative" style={{ width: '100%', maxWidth: '100%', boxSizing: 'border-box' }}>
         <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 md:opacity-0 translate-y-0 md:translate-y-10'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">About Me</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start" style={{ width: '100%', maxWidth: '100%' }}>
             {/* Left Column - Profile & Stats */}
-            <div className="space-y-8">
+            <div className="space-y-8" style={{ width: '100%', maxWidth: '100%' }}>
               {/* Profile Image with different styling */}
               <div className="flex justify-center lg:justify-start">
                 <div className="relative w-full max-w-[320px] lg:max-w-none">
@@ -69,8 +69,8 @@ const About: React.FC = () => {
             </div>
 
             {/* Right Column - Content */}
-            <div className="space-y-8 w-full">
-              <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 w-full">
+            <div className="space-y-8 w-full" style={{ width: '100%', maxWidth: '100%', boxSizing: 'border-box' }}>
+              <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 w-full" style={{ width: '100%', maxWidth: '100%', boxSizing: 'border-box', overflow: 'hidden' }}>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                     <Users className="text-white" size={24} />
@@ -91,9 +91,9 @@ const About: React.FC = () => {
                     <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Mail className="text-blue-600 dark:text-blue-400" size={20} />
                     </div>
-                    <div className="min-w-0 flex-1">
+                    <div className="min-w-0 flex-1" style={{ minWidth: 0, maxWidth: '100%', overflow: 'hidden' }}>
                       <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Email</div>
-                      <div className="text-gray-900 dark:text-white font-semibold text-sm sm:text-base break-all">{portfolioData.personal.email}</div>
+                      <div className="text-gray-900 dark:text-white font-semibold text-sm sm:text-base break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word' }}>{portfolioData.personal.email}</div>
                     </div>
                   </div>
 
@@ -101,9 +101,9 @@ const About: React.FC = () => {
                     <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Phone className="text-green-600 dark:text-green-400" size={20} />
                     </div>
-                    <div className="min-w-0 flex-1">
+                    <div className="min-w-0 flex-1" style={{ minWidth: 0, maxWidth: '100%', overflow: 'hidden' }}>
                       <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Phone</div>
-                      <div className="text-gray-900 dark:text-white font-semibold text-sm sm:text-base break-all">{portfolioData.personal.phone}</div>
+                      <div className="text-gray-900 dark:text-white font-semibold text-sm sm:text-base break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word' }}>{portfolioData.personal.phone}</div>
                     </div>
                   </div>
 
@@ -111,9 +111,9 @@ const About: React.FC = () => {
                     <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
                       <MapPin className="text-purple-600 dark:text-purple-400" size={20} />
                     </div>
-                    <div className="min-w-0 flex-1">
+                    <div className="min-w-0 flex-1" style={{ minWidth: 0, maxWidth: '100%', overflow: 'hidden' }}>
                       <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">Location</div>
-                      <div className="text-gray-900 dark:text-white font-semibold text-sm sm:text-base break-words">{portfolioData.personal.location}</div>
+                      <div className="text-gray-900 dark:text-white font-semibold text-sm sm:text-base break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>{portfolioData.personal.location}</div>
                     </div>
                   </div>
                 </div>

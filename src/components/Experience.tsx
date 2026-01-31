@@ -7,9 +7,9 @@ const Experience: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();
 
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-gray-900" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section id="experience" className="py-20 bg-white dark:bg-gray-900 overflow-x-hidden" ref={ref} style={{ width: '100%', maxWidth: '100vw' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ width: '100%', maxWidth: '100%' }}>
+        <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 md:opacity-0 translate-y-0 md:translate-y-10'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Professional Experience</h2>
             <div className="w-24 h-1 bg-primary-600 dark:bg-primary-500 mx-auto rounded-full"></div>
@@ -34,18 +34,18 @@ const Experience: React.FC = () => {
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                       <div className="flex-1 mb-4 lg:mb-0">
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{exp.title}</h3>
-                        <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300 mb-2">
+                        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-gray-600 dark:text-gray-300 mb-2">
                           <div className="flex items-center gap-2">
-                            <Building size={18} className="text-primary-600 dark:text-primary-400" />
-                            <span className="font-semibold text-primary-700 dark:text-primary-300">{exp.company}</span>
+                            <Building size={18} className="text-primary-600 dark:text-primary-400 flex-shrink-0" />
+                            <span className="font-semibold text-primary-700 dark:text-primary-300 break-words" style={{ wordBreak: 'break-word' }}>{exp.company}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Calendar size={18} className="text-secondary-600 dark:text-secondary-400" />
-                            <span>{exp.period}</span>
+                            <Calendar size={18} className="text-secondary-600 dark:text-secondary-400 flex-shrink-0" />
+                            <span className="break-words" style={{ wordBreak: 'break-word' }}>{exp.period}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <MapPin size={18} className="text-accent-600 dark:text-accent-400" />
-                            <span>{exp.location}</span>
+                            <MapPin size={18} className="text-accent-600 dark:text-accent-400 flex-shrink-0" />
+                            <span className="break-words" style={{ wordBreak: 'break-word' }}>{exp.location}</span>
                           </div>
                         </div>
                       </div>

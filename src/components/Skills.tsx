@@ -31,9 +31,9 @@ const Skills: React.FC = () => {
   const conceptCategories = Object.entries(portfolioData.skills.concepts);
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-br from-gray-50 to-primary-50 dark:from-gray-800 dark:to-gray-900" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section id="skills" className="py-20 bg-gradient-to-br from-gray-50 to-primary-50 dark:from-gray-800 dark:to-gray-900 overflow-x-hidden" ref={ref} style={{ width: '100%', maxWidth: '100vw' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ width: '100%', maxWidth: '100%' }}>
+        <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 md:opacity-0 translate-y-0 md:translate-y-10'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Expertise</h2>
             <div className="w-24 h-1 bg-primary-600 dark:bg-primary-500 mx-auto rounded-full"></div>

@@ -55,9 +55,9 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section id="contact" className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-x-hidden" ref={ref} style={{ width: '100%', maxWidth: '100vw' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ width: '100%', maxWidth: '100%' }}>
+        <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-100 md:opacity-0 translate-y-0 md:translate-y-10'}`}>
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Get In Touch</h2>
             <div className="w-24 h-1 bg-orange-400 mx-auto rounded-full"></div>
@@ -66,9 +66,9 @@ const Contact: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start" style={{ width: '100%', maxWidth: '100%' }}>
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-8" style={{ width: '100%', maxWidth: '100%' }}>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
                 <p className="text-blue-100 dark:text-gray-300 text-lg leading-relaxed mb-8">
@@ -82,11 +82,11 @@ const Contact: React.FC = () => {
                   <div className="p-3 bg-white/10 dark:bg-gray-700 rounded-lg backdrop-blur-sm">
                     <Mail className="text-orange-400" size={24} />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1" style={{ minWidth: 0, maxWidth: '100%' }}>
                     <h4 className="text-white font-semibold mb-1">Email</h4>
                     <a
                       href={`mailto:${portfolioData.personal.email}`}
-                      className="text-blue-100 dark:text-gray-300 hover:text-orange-400 transition-colors"
+                      className="text-blue-100 dark:text-gray-300 hover:text-orange-400 transition-colors break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', display: 'block' }}
                     >
                       {portfolioData.personal.email}
                     </a>
@@ -97,11 +97,11 @@ const Contact: React.FC = () => {
                   <div className="p-3 bg-white/10 dark:bg-gray-700 rounded-lg backdrop-blur-sm">
                     <Phone className="text-orange-400" size={24} />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1" style={{ minWidth: 0, maxWidth: '100%' }}>
                     <h4 className="text-white font-semibold mb-1">Phone</h4>
                     <a
                       href={`tel:${portfolioData.personal.phone}`}
-                      className="text-blue-100 dark:text-gray-300 hover:text-orange-400 transition-colors"
+                      className="text-blue-100 dark:text-gray-300 hover:text-orange-400 transition-colors break-all" style={{ wordBreak: 'break-all', overflowWrap: 'break-word', display: 'block' }}
                     >
                       {portfolioData.personal.phone}
                     </a>
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-white/20 dark:border-gray-600">
+            <div className="bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-white/20 dark:border-gray-600 w-full" style={{ width: '100%', maxWidth: '100%', boxSizing: 'border-box' }}>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>

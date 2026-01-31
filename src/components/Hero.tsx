@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 overflow-hidden pt-16" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         {/* Floating geometric shapes */}
@@ -62,10 +62,10 @@ const Hero: React.FC = () => {
           {/* Main Content with beautiful typography */}
           <div className="space-y-8">
             <div className="space-y-6">
-              <h1 className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-800 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-100 mb-4 tracking-tight leading-none">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-800 via-blue-600 to-purple-600 dark:from-white dark:via-blue-100 dark:to-purple-100 mb-4 tracking-tight leading-none break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                 {portfolioData.personal.name.split(' ')[0]}
               </h1>
-              <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 mb-8 tracking-wide">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 mb-8 tracking-wide break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
                 {portfolioData.personal.name.split(' ')[1]}
               </h1>
             </div>
@@ -79,11 +79,11 @@ const Hero: React.FC = () => {
               <div className="h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent w-24"></div>
             </div>
 
-            <p className="text-2xl md:text-3xl text-gray-700 dark:text-blue-200 font-medium mb-8 tracking-wide">
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-blue-200 font-medium mb-8 tracking-wide break-words px-4" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               {portfolioData.personal.title}
             </p>
 
-            <p className="text-lg text-gray-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed mb-12 font-light">
+            <p className="text-base sm:text-lg text-gray-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed mb-12 font-light px-4 break-words" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               Passionate about transforming data into actionable insights and building intelligent solutions that make a difference.
             </p>
 
