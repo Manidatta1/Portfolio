@@ -34,6 +34,10 @@ const Skills: React.FC = () => {
   // Reset scroll position when modal opens - ensure list always starts from top
   useEffect(() => {
     if (activeDropdown) {
+      // Prevent body scroll when modal is open
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      
       // Small delay to ensure DOM is updated
       setTimeout(() => {
         // Reset scroll of the content area to show from top (first item)
@@ -41,12 +45,12 @@ const Skills: React.FC = () => {
         if (scrollableContent) {
           scrollableContent.scrollTop = 0;
         }
-        // Also ensure the outer container scrolls to top
-        const modalContainer = document.querySelector('[data-modal-container]') as HTMLElement;
-        if (modalContainer) {
-          modalContainer.scrollTop = 0;
-        }
       }, 50);
+      
+      // Cleanup: restore body scroll when modal closes
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
     }
   }, [activeDropdown]);
 
@@ -123,21 +127,21 @@ const Skills: React.FC = () => {
                         onClick={() => setActiveDropdown(null)}
                       />
                       
-                      {/* Modal-style dropdown - Positioned at top for better visibility */}
+                      {/* Modal-style dropdown - Always visible in viewport center */}
                       <div 
                         data-modal-container
-                        className="fixed inset-0 z-50 flex items-start justify-start sm:justify-center p-4 pt-4 sm:pt-8 overflow-y-auto"
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4"
                         onClick={(e) => {
                           // Close if clicking backdrop
                           if (e.target === e.currentTarget) {
                             setActiveDropdown(null);
                           }
                         }}
-                        style={{ scrollTop: 0 }}
+                        style={{ overflow: 'auto' }}
                       >
                         <div 
                           ref={modalContentRef}
-                          className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-600 max-w-md w-full max-h-[90vh] overflow-hidden animate-fade-in mt-4 sm:mt-8"
+                          className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-600 max-w-md w-full max-h-[85vh] overflow-hidden animate-fade-in my-auto"
                           onClick={(e) => e.stopPropagation()}
                         >
                           <div className="p-4 border-b border-gray-200 dark:border-gray-600 sticky top-0 bg-white dark:bg-gray-800 z-10">
@@ -154,8 +158,8 @@ const Skills: React.FC = () => {
                           </div>
                           <div 
                             data-modal-content
-                            className="overflow-y-auto max-h-[calc(90vh-80px)]"
-                            style={{ scrollBehavior: 'auto', scrollTop: 0 }}
+                            className="overflow-y-auto max-h-[calc(85vh-80px)]"
+                            style={{ scrollBehavior: 'auto' }}
                           >
                             <div className="p-4 space-y-3">
                               {details.map((detail, detailIndex) => (
