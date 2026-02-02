@@ -7,7 +7,7 @@ import profileImg from '../assets/profile.jpeg';
 const About: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();
 
-  const RESUME_URL = "https://drive.google.com/file/d/1haG3Y1zXKEjzOZksQuAp0tyy3MBfkzhG/view?usp=sharing";
+  const RESUME_URL = "https://drive.google.com/file/d/1EK9yPQ6GxZyrFHNOJg432Grl7iVl2hIR/view?usp=sharing";
 
 
   return (
