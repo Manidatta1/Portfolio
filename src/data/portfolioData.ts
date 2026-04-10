@@ -148,7 +148,7 @@ export const portfolioData = {
     {
       title: "Data Science Intern",
       company: "Ramsi",
-      period: "Jan 2025 - Present",
+      period: "Jan 2026 - Present",
       location: "Colorado, United States",
     },
     {
