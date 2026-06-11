@@ -7,7 +7,7 @@ import profileImg from '../assets/profile.jpeg';
 const About: React.FC = () => {
   const [ref, isVisible] = useScrollAnimation();
 
-  const RESUME_URL = "https://drive.google.com/file/d/1E2m-On_mlfmK6w06XeeUz6bNUfy7fhPT/view?usp=sharing";
+  const RESUME_URL = "https://drive.google.com/file/d/1eeA6utRmlnA__uh7O9WKvhPA7S14jQr3/view?usp=sharing";
 
 
   return (
@@ -58,7 +58,7 @@ const About: React.FC = () => {
                   <div className="text-sm text-purple-700 dark:text-purple-300 font-medium">Projects Completed</div>
                 </div>
                 <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-6 rounded-2xl border border-green-200 dark:border-green-700/30">
-                  <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">3.954</div>
+                  <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">3.96</div>
                   <div className="text-sm text-green-700 dark:text-green-300 font-medium">GPA</div>
                 </div>
                 <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 p-6 rounded-2xl border border-orange-200 dark:border-orange-700/30">

@@ -181,7 +181,7 @@ export const portfolioData = {
       title: "Data and API Engineer",
       company: "NCR Voyix",
       period: "Feb 2023 - Aug 2024",
-      location: "Georgia, United States (HQ)",
+      location: "Hyderabad, India (Global HQ: Atlanta, GA)",
     },
     {
       title: "Data Science Intern",
