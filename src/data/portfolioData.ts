@@ -4,7 +4,7 @@ export const portfolioData = {
     title: "Data Science Enthusiast",
     email: "anumandlamanidatta17@gmail.com",
     phone: "+1 (303) 901-4317",
-    location: "Boulder, CO",
+    location: "Denver, CO",
     summary: "Data Science graduate from the University of Colorado Boulder with experience building machine learning models, scalable data pipelines, and AI-driven analytics solutions. I thrive on collaboration, continuous learning, and building data-driven systems that create real business impact.",
     github: "https://github.com/Manidatta1/",
     linkedin: "https://www.linkedin.com/in/manidatta/",
