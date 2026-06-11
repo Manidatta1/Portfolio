@@ -5,7 +5,7 @@ export const portfolioData = {
     email: "anumandlamanidatta17@gmail.com",
     phone: "+1 (303) 901-4317",
     location: "Boulder, CO",
-    summary: "A data science enthusiast pursuing my Master's at the University of Colorado Boulder. I thrive on collaboration, continuous learning, and building data driven models that drive real impact.",
+    summary: "Data Science graduate from the University of Colorado Boulder with experience building machine learning models, scalable data pipelines, and AI-driven analytics solutions. I thrive on collaboration, continuous learning, and building data-driven systems that create real business impact.",
     github: "https://github.com/Manidatta1/",
     linkedin: "https://www.linkedin.com/in/manidatta/",
   },
@@ -15,7 +15,7 @@ export const portfolioData = {
       degree: "Master of Science in Data Science",
       school: "University of Colorado Boulder",
       year: "Aug 2024- May 2026",
-      gpa: "3.954/4.0",
+      gpa: "3.96/4.0",
       coursework: [
         "Machine Learning",
         "Deep Learning & Neural Networks",
@@ -26,7 +26,7 @@ export const portfolioData = {
       ]
     },
     {
-      degree: "Bachelor of Science in Electronics and Communication Engineering",
+      degree: "Bachelor of Science in Computer Engineering",
       school: "Vasavi College of Engineering",
       year: "Aug 2019 - May 2023",
       gpa: "3.58/4.0",
@@ -53,8 +53,8 @@ export const portfolioData = {
       "TensorFlow", "Hugging Face", "Optuna", "Librosa"
     ],
     tools: [
-      "Git", "Dagshub", "Docker", "MLflow",
-      "Airflow", "AWS", "Tableau", "Linux", "GCP"
+      "Git", "Dagshub", "Docker", "MLflow", "Apache Spark",
+      "Apache Airflow", "AWS", "Tableau", "Linux", "GCP", "dbt"
     ],
     concepts: {
       "🧹 Data Preprocessing": [
@@ -69,6 +69,13 @@ export const portfolioData = {
         "Stopword Removal",
         "Word Embeddings (Word2Vec, GloVe)",
         "Text Cleaning (punctuation, casing, etc.)"
+
+      ],
+      "🧹 Data Engineering": [
+        "Data Warehousing",
+        "Data Lakes",
+        "Lakehouse Architecture",
+        "ETL/ELT Pipelines",
 
       ],
       "🤖 Machine Learning": [
@@ -122,7 +129,8 @@ export const portfolioData = {
         "Generalized Linear Models",
         "Generalized Additive Models",
         "Bootstrapping",
-        "Confidence Intervals"
+        "Confidence Intervals",
+        "Causal Inference"
       ],
       "📊 Visualization": [
         "Matplotlib",
@@ -148,13 +156,13 @@ export const portfolioData = {
     {
       title: "Data Science Intern",
       company: "Ramsi",
-      period: "Jan 2026 - Present",
+      period: "Jan 2026 - May 2026",
       location: "Colorado, United States",
     },
     {
       title: "AI/ML Research Assistant",
       company: "University of Colorado Boulder",
-      period: "Dec 2025 - Present",
+      period: "Dec 2025 - May 2026",
       location: "Colorado, United States",
     },
     {
@@ -173,7 +181,7 @@ export const portfolioData = {
       title: "Data and API Engineer",
       company: "NCR Voyix",
       period: "Feb 2023 - Aug 2024",
-      location: "Georgia, United States",
+      location: "Georgia, United States (HQ)",
     },
     {
       title: "Data Science Intern",
