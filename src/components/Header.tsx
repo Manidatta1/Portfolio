@@ -6,7 +6,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const RESUME_URL = "https://drive.google.com/file/d/1eeA6utRmlnA__uh7O9WKvhPA7S14jQr3/view?usp=sharing";
+  const RESUME_URL = "https://drive.google.com/file/d/1ZqeyxSx_o5TDwiipvYIivpkmGVcosZxc/view?usp=sharing";
 
   const navItems = [
     { name: 'About', href: '#about' },
